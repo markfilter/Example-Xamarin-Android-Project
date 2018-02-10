@@ -34,6 +34,10 @@ namespace ExampleDroid
             largeProgressIndicator = FindViewById<ProgressBar>(Resource.Id.progressBarLarge);
             normalProgressIndicator = FindViewById<ProgressBar>(Resource.Id.progressBarNormal);
             smallProgressIndicator = FindViewById<ProgressBar>(Resource.Id.progressBarSmall);
+            horizontalProgressBar.Visibility = ViewStates.Invisible;
+            largeProgressIndicator.Visibility = ViewStates.Invisible;
+            normalProgressIndicator.Visibility = ViewStates.Invisible;
+            smallProgressIndicator.Visibility = ViewStates.Invisible;
 
             // Setup Buttons
             Button startAnimationButton = FindViewById<Button>(Resource.Id.buttonStart);
@@ -87,6 +91,10 @@ namespace ExampleDroid
                     Thread.Sleep(500);
                 }
                 progressDialog.Dismiss();
+
+                RunOnUiThread(() => {
+                    Toast.MakeText(this, "Internet Download Complete", ToastLength.Short).Show();
+                });
             })).Start();// using System.Threading
         }
 
