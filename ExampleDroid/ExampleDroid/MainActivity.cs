@@ -8,7 +8,7 @@ using Android.Views;
 namespace ExampleDroid
 {
     [Activity(Label = "Menu", MainLauncher = true, Icon = "@mipmap/icon")]
-    public class MainActivity : Activity, ListView.IOnItemClickListener
+    public class MainActivity : Activity
     {
         // Properties
         ArrayList menuCollection = new ArrayList();
@@ -36,15 +36,25 @@ namespace ExampleDroid
             listAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, ((String[])menuCollection.ToArray(typeof(string))));
             menuListView.Adapter = listAdapter;
             menuListView.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => {
-                String selectedFromList = (string)menuListView.GetItemAtPosition(e.Position);
-                Toast.MakeText(this, selectedFromList, ToastLength.Short).Show();
-            };
-        }
 
-        public void OnItemClick(AdapterView parent, View view, int position, long id)
-        {
-            string t = (string)menuCollection[position];
-            Toast.MakeText(this, t, ToastLength.Short).Show();
+                String selectedFromList = (string)menuListView.GetItemAtPosition(e.Position);
+
+                switch (e.Position)
+                {
+                    case 0:
+                        Toast.MakeText(this, selectedFromList, ToastLength.Short).Show();
+                        StartActivity(typeof(ProgressIndicator));
+                        break;
+
+                    default:
+                        Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
+                        break;
+                }
+
+
+
+
+            };
         }
 
         /// <summary>
@@ -52,6 +62,7 @@ namespace ExampleDroid
         /// </summary>
         private void populateMenu()
         {
+            menuCollection.Add("Progress Indicator");
             menuCollection.Add("Toasts");
             menuCollection.Add("Snackbars");
             menuCollection.Add("ListView");
@@ -64,12 +75,15 @@ namespace ExampleDroid
             menuCollection.Add("PagerView");
             menuCollection.Add("WebView");
             menuCollection.Add("Fingerprint Auth");
+            menuCollection.Add("ImageView");
             menuCollection.Add("Camera");
             menuCollection.Add("Camera & ContentProvider");
             menuCollection.Add("Notifications");
             menuCollection.Add("Basic Fragment");
             menuCollection.Add("Fragment with Menu");
             menuCollection.Add("Fragment with Data");
+            menuCollection.Add("Login Screen");
+
         }
     }
 }

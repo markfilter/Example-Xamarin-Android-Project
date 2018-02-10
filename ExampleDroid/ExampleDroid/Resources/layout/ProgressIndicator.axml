@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBarHorizontal"
+        android:indeterminate="true" />
+    <ProgressBar xmlns:tools="http://schemas.android.com/tools"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBarLarge"
+        android:focusableInTouchMode="true"
+        android:indeterminate="true"
+        tools:visibility="visible" />
+    <ProgressBar xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBarNormal"
+        android:indeterminate="true"
+        tools:visibility="visible" />
+    <ProgressBar xmlns:tools="http://schemas.android.com/tools"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBarSmall"
+        android:indeterminate="true"
+        tools:visibility="visible" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1">
+        <Button
+            android:text="Start Indeterminte"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:id="@+id/buttonStart" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:id="@+id/buttonStop"
+            android:text="Stop Indeterminite" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:id="@+id/buttonProgressDialog"
+            android:text="Show Dialog" />
+    </LinearLayout>
+</LinearLayout>

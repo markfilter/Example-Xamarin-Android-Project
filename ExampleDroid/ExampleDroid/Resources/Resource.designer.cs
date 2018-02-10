@@ -1741,6 +1741,15 @@ namespace ExampleDroid
 			// aapt resource value: 0x7f0b002e
 			public const int buttonPanel = 2131427374;
 			
+			// aapt resource value: 0x7f0b0075
+			public const int buttonProgressDialog = 2131427445;
+			
+			// aapt resource value: 0x7f0b0073
+			public const int buttonStart = 2131427443;
+			
+			// aapt resource value: 0x7f0b0074
+			public const int buttonStop = 2131427444;
+			
 			// aapt resource value: 0x7f0b005b
 			public const int cancel_action = 2131427419;
 			
@@ -1813,6 +1822,9 @@ namespace ExampleDroid
 			// aapt resource value: 0x7f0b006b
 			public const int line3 = 2131427435;
 			
+			// aapt resource value: 0x7f0b0072
+			public const int linearLayout1 = 2131427442;
+			
 			// aapt resource value: 0x7f0b0009
 			public const int listMode = 2131427337;
 			
@@ -1851,6 +1863,18 @@ namespace ExampleDroid
 			
 			// aapt resource value: 0x7f0b0030
 			public const int parentPanel = 2131427376;
+			
+			// aapt resource value: 0x7f0b006e
+			public const int progressBarHorizontal = 2131427438;
+			
+			// aapt resource value: 0x7f0b006f
+			public const int progressBarLarge = 2131427439;
+			
+			// aapt resource value: 0x7f0b0070
+			public const int progressBarNormal = 2131427440;
+			
+			// aapt resource value: 0x7f0b0071
+			public const int progressBarSmall = 2131427441;
 			
 			// aapt resource value: 0x7f0b0005
 			public const int progress_circular = 2131427333;
@@ -2161,16 +2185,19 @@ namespace ExampleDroid
 			public const int notification_template_part_time = 2130968618;
 			
 			// aapt resource value: 0x7f04002b
-			public const int select_dialog_item_material = 2130968619;
+			public const int ProgressIndicator = 2130968619;
 			
 			// aapt resource value: 0x7f04002c
-			public const int select_dialog_multichoice_material = 2130968620;
+			public const int select_dialog_item_material = 2130968620;
 			
 			// aapt resource value: 0x7f04002d
-			public const int select_dialog_singlechoice_material = 2130968621;
+			public const int select_dialog_multichoice_material = 2130968621;
 			
 			// aapt resource value: 0x7f04002e
-			public const int support_simple_spinner_dropdown_item = 2130968622;
+			public const int select_dialog_singlechoice_material = 2130968622;
+			
+			// aapt resource value: 0x7f04002f
+			public const int support_simple_spinner_dropdown_item = 2130968623;
 			
 			static Layout()
 			{
