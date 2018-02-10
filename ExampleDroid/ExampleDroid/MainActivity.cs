@@ -42,10 +42,11 @@ namespace ExampleDroid
                 switch (e.Position)
                 {
                     case 0:
-                        Toast.MakeText(this, selectedFromList, ToastLength.Short).Show();
                         StartActivity(typeof(ProgressIndicator));
                         break;
-
+                    case 1:
+                        StartActivity(typeof(Toasts));
+                        break;
                     default:
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
                         break;

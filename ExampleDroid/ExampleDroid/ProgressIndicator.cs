@@ -26,7 +26,7 @@ namespace ExampleDroid
         {
             base.OnCreate(savedInstanceState);
 
-            // Set our view from the "main" layout resource
+            // Set our view from the "ProgressIndicator" layout resource
             SetContentView(Resource.Layout.ProgressIndicator);
 
             // Initialize Progress Bars
