@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Threading;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -20,6 +20,7 @@ namespace ExampleDroid
         ProgressBar largeProgressIndicator;
         ProgressBar normalProgressIndicator;
         ProgressBar smallProgressIndicator;
+        private int progressBarStatus = 0;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -34,32 +35,22 @@ namespace ExampleDroid
             normalProgressIndicator = FindViewById<ProgressBar>(Resource.Id.progressBarNormal);
             smallProgressIndicator = FindViewById<ProgressBar>(Resource.Id.progressBarSmall);
 
-            // Stop Animation
-            StopIndefiniteAnimation();
-
-            // Start Animation
-            StartIndefiniteAnimation();
-
             // Setup Buttons
             Button startAnimationButton = FindViewById<Button>(Resource.Id.buttonStart);
             Button stopAnimationButton = FindViewById<Button>(Resource.Id.buttonStop);
             Button progressDialogButton = FindViewById<Button>(Resource.Id.buttonProgressDialog);
 
-            startAnimationButton.Click += delegate {
-                StartIndefiniteAnimation();
-            }; 
+            // Start Indefinite Animation
+            startAnimationButton.Click += StartIndefiniteAnimation;
 
-            stopAnimationButton.Click += delegate {
-                StopIndefiniteAnimation();
-            }; 
+            // Stop Indefinite Animation
+            stopAnimationButton.Click += StopIndefiniteAnimation;
 
-            progressDialogButton.Click += delegate {
-                Toast.MakeText(this, "Progress Dialog not yet implemented", ToastLength.Short).Show();
-            }; 
-
+            // Progress Dialog
+            progressDialogButton.Click += DisplayProgressDialog;
         }
 
-        private void StopIndefiniteAnimation()
+        private void StopIndefiniteAnimation(Object sender, EventArgs e)
         {
             horizontalProgressBar.Visibility = ViewStates.Invisible;
             largeProgressIndicator.Visibility = ViewStates.Invisible;
@@ -67,7 +58,7 @@ namespace ExampleDroid
             smallProgressIndicator.Visibility = ViewStates.Invisible;
         }
 
-        private void StartIndefiniteAnimation()
+        private void StartIndefiniteAnimation(Object sender, EventArgs e)
         {
             
             horizontalProgressBar.Visibility = ViewStates.Visible;
@@ -75,5 +66,29 @@ namespace ExampleDroid
             normalProgressIndicator.Visibility = ViewStates.Visible;
             smallProgressIndicator.Visibility = ViewStates.Visible;
         }
+
+        private void DisplayProgressDialog(Object sender, EventArgs e)
+        {
+            ProgressDialog progressDialog = new ProgressDialog(this);
+            progressDialog.SetMessage("You are downloading the Internet");
+            progressDialog.SetProgressStyle(ProgressDialogStyle.Horizontal);
+            progressDialog.Progress = 0;
+            progressDialog.Max = 100;
+            progressDialog.SetCancelable(true);
+            progressDialog.Show();
+
+            progressBarStatus = 0;
+
+            new Thread(new ThreadStart(delegate {
+                while(progressBarStatus < 100) 
+                {
+                    progressBarStatus += 10;
+                    progressDialog.Progress = progressBarStatus;
+                    Thread.Sleep(500);
+                }
+                progressDialog.Dismiss();
+            })).Start();// using System.Threading
+        }
+
     }
 }
