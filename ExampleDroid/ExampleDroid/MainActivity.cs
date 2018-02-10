@@ -10,7 +10,7 @@ namespace ExampleDroid
     [Activity(Label = "Menu", MainLauncher = true, Icon = "@mipmap/icon")]
     public class MainActivity : Activity, ListView.IOnItemClickListener
     {
-        string[] items;
+        // Properties
         ArrayList menuCollection = new ArrayList();
         IListAdapter listAdapter;
         ListView menuListView;
@@ -24,18 +24,22 @@ namespace ExampleDroid
 
             // Populates the menu ListView for App Navigation
             populateMenu();
-            items = new string[]{"One", "Two", "Three"};
+            setupListView();
+        }
+
+        /// <summary>
+        /// Method sets up the ListView with an Adapter and an OnItemClickListener
+        /// </summary>
+        private void setupListView()
+        {
             menuListView = FindViewById<ListView>(Resource.Id.listViewMenu);
             listAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, ((String[])menuCollection.ToArray(typeof(string))));
             menuListView.Adapter = listAdapter;
-            menuListView.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => { 
-                String selectedFromList = (string)menuListView.GetItemAtPosition(e.Position); 
+            menuListView.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => {
+                String selectedFromList = (string)menuListView.GetItemAtPosition(e.Position);
                 Toast.MakeText(this, selectedFromList, ToastLength.Short).Show();
             };
-            //menuListView.SetOnClickListener(this);
-            //button.Click += delegate { button.Text = $"{count++} clicks!"; };
         }
-
 
         public void OnItemClick(AdapterView parent, View view, int position, long id)
         {
@@ -43,6 +47,9 @@ namespace ExampleDroid
             Toast.MakeText(this, t, ToastLength.Short).Show();
         }
 
+        /// <summary>
+        /// Method adds String values to the menuCollection object for use to populate the menu ListView.
+        /// </summary>
         private void populateMenu()
         {
             menuCollection.Add("Toasts");
