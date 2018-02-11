@@ -32,16 +32,27 @@ namespace ExampleDroid
         }
 
         private void DisplaySnackBar(Object sender, EventArgs e) {
-
+            
+            // Intermittent Crash: Java.Lang.ClassCastException has been thrown
             // android.support.design.widget.Snackbar$SnackbarLayout cannot be cast to 
             // android.support.design.internal.SnackbarContentLayout
 
-            Snackbar.Make(myCoordinatorLayout, "You have a message", Snackbar.LengthLong)
-            .SetAction("Read Message", delegate {
-                TextView outputTextView = FindViewById<TextView>(Resource.Id.textViewSnackbarsOutput);
-                outputTextView.Text = "Follow the white rabbit.";
-            })
-            .Show(); 
+            try {
+                Snackbar.Make(myCoordinatorLayout, "You have a message", Snackbar.LengthLong)
+                .SetAction("Read Message", delegate {
+                    TextView outputTextView = FindViewById<TextView>(Resource.Id.textViewSnackbarsOutput);
+                    outputTextView.Text = "Follow the white rabbit.";
+                })
+                .Show();
+            } catch (Java.Lang.ClassCastException exception) {
+                var alertDialog = new Android.App.AlertDialog.Builder(this);
+
+                alertDialog.SetMessage(exception.Message);
+                alertDialog.SetPositiveButton("OK", delegate {});
+
+                alertDialog.Show();
+            }
+             
         }
     }
 }

@@ -39,12 +39,6 @@ namespace ExampleDroid
             numberPicker.SetOnValueChangedListener(this);
         }
 
-        //public void OnScrollStateChange(NumberPicker view, [GeneratedEnum] NumberPickerScrollState scrollState)
-        //{
-        //    if (scrollState.Equals(NumberPickerScrollState.Idle)) {
-        //        Toast.MakeText(this, view.Selected.ToString(), ToastLength.Short);
-        //    }
-        //}
 
         public void OnValueChange(NumberPicker picker, int oldVal, int newVal)
         {
