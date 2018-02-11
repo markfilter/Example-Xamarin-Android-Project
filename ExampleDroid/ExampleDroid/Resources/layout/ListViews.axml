@@ -1,3 +1,35 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:id="@+id/lvListViewsListView"
+        android:background="#ff005656" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:background="#f6f9f6"
+        android:padding="24dp"
+        android:layout_width="match_parent">
+        <Button
+            android:text="Add"
+            android:layout_weight="0.5"
+            android:layout_width="0dp"
+            android:backgroundTint="@android:color/holo_green_light"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/buttonListViewsAdd" />
+        <Button
+            android:text="Delete"
+            android:layout_weight="0.5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/buttonListViewsDelete" />
+    </LinearLayout>
 </LinearLayout>

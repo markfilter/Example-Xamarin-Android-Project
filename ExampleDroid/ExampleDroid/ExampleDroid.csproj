@@ -96,6 +96,8 @@
     <Compile Include="ProgressIndicator.cs" />
     <Compile Include="Toasts.cs" />
     <Compile Include="Snackbars.cs" />
+    <Compile Include="ListViews.cs" />
+    <Compile Include="CustomListViews.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -116,6 +118,7 @@
     <AndroidResource Include="Resources\layout\Snackbars.axml" />
     <AndroidResource Include="Resources\layout\ListViews.axml" />
     <AndroidResource Include="Resources\layout\GridViews.axml" />
+    <AndroidResource Include="Resources\layout\CustomListViews.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

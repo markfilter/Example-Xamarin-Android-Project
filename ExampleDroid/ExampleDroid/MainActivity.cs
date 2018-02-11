@@ -50,6 +50,12 @@ namespace ExampleDroid
                     case 2:
                         StartActivity(typeof(Snackbars));
                         break;
+                    case 3:
+                        StartActivity(typeof(ListViews));
+                        break;
+                    case 4:
+                        StartActivity(typeof(CustomListViews));
+                        break;
                     default:
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
                         break;
