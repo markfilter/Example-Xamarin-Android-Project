@@ -68,7 +68,7 @@ namespace ExampleDroid
                     case 8:
                         StartActivity(typeof(CustomGridViews));
                         break;
-                    case 9:// Picker
+                    case 9:
                         StartActivity(typeof(Pickers));
                         break;
                     case 10: // Date Picker
