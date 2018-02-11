@@ -90,7 +90,9 @@ namespace ExampleDroid
 
 
 
-
+        /// <summary>
+        /// Setups the list view.
+        /// </summary>
         private void SetupListView()
         {
             listAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, ((String[])dataSource.ToArray(typeof(string))));

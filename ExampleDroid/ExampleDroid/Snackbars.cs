@@ -31,6 +31,11 @@ namespace ExampleDroid
             displaySnackbarButton.Click += DisplaySnackBar;
         }
 
+        /// <summary>
+        /// Displaies the snack bar.
+        /// </summary>
+        /// <param name="sender">Sender</param>
+        /// <param name="e">Event Arguments</param>
         private void DisplaySnackBar(Object sender, EventArgs e) {
             
             // Intermittent Crash: Java.Lang.ClassCastException has been thrown

@@ -30,6 +30,9 @@ namespace ExampleDroid
             SetupNumberPicker();
         }
 
+        /// <summary>
+        /// Setups the number picker.
+        /// </summary>
         private void SetupNumberPicker()
         {
             numberPicker = FindViewById<NumberPicker>(Resource.Id.npPickersNumberPicker);
@@ -39,7 +42,12 @@ namespace ExampleDroid
             numberPicker.SetOnValueChangedListener(this);
         }
 
-
+        /// <summary>
+        /// Ons the value change.
+        /// </summary>
+        /// <param name="picker">Picker.</param>
+        /// <param name="oldVal">Old value.</param>
+        /// <param name="newVal">New value.</param>
         public void OnValueChange(NumberPicker picker, int oldVal, int newVal)
         {
             outputTextView.Text = newVal.ToString();

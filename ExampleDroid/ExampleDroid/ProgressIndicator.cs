@@ -54,6 +54,11 @@ namespace ExampleDroid
             progressDialogButton.Click += DisplayProgressDialog;
         }
 
+        /// <summary>
+        /// Stops the indefinite animation.
+        /// </summary>
+        /// <param name="sender">Sender</param>
+        /// <param name="e">Event Arguments</param>
         private void StopIndefiniteAnimation(Object sender, EventArgs e)
         {
             horizontalProgressBar.Visibility = ViewStates.Invisible;
@@ -71,6 +76,11 @@ namespace ExampleDroid
             smallProgressIndicator.Visibility = ViewStates.Visible;
         }
 
+        /// <summary>
+        /// Displaies the progress dialog.
+        /// </summary>
+        /// <param name="sender">Sender</param>
+        /// <param name="e">Event Arguments</param>
         private void DisplayProgressDialog(Object sender, EventArgs e)
         {
             ProgressDialog progressDialog = new ProgressDialog(this);

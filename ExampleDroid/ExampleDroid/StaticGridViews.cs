@@ -20,7 +20,7 @@ namespace ExampleDroid
         {
             base.OnCreate(savedInstanceState);
 
-            // Set our view from the "GridViews" layout resource
+            // Set our view from the "StaticGridViews" layout resource
             SetContentView(Resource.Layout.StaticGridViews);
 
         }

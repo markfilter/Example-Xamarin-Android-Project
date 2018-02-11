@@ -35,6 +35,9 @@ namespace ExampleDroid
             };
         }
 
+        /// <summary>
+        /// Setups the date picker.
+        /// </summary>
         private void SetupDatePicker()
         {
             DateTime currently = DateTime.Now;
