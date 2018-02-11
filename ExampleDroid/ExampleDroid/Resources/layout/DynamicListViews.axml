@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.8"
-        android:id="@+id/lvCustomListViewsListView"
+        android:id="@+id/lvDynamicListViewsListView"
         android:background="#ff005656" />
     <LinearLayout
         android:orientation="horizontal"
@@ -23,13 +23,13 @@
             android:backgroundTint="@android:color/holo_green_light"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:id="@+id/buttonCustomListViewsAdd" />
+            android:id="@+id/buttonDynamicListViewsAdd" />
         <Button
             android:text="Delete"
             android:layout_weight="0.5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:id="@+id/buttonCustomListViewsDelete" />
+            android:id="@+id/buttonDynamicListViewsDelete" />
     </LinearLayout>
 </LinearLayout>

@@ -36,8 +36,6 @@ namespace ExampleDroid
             // android.support.design.widget.Snackbar$SnackbarLayout cannot be cast to 
             // android.support.design.internal.SnackbarContentLayout
 
-            //Snackbar.Make(myCoordinatorLayout, "Elon Musk: Hi!", Snackbar.LengthLong).Show(); 
-
             Snackbar.Make(myCoordinatorLayout, "You have a message", Snackbar.LengthLong)
             .SetAction("Read Message", delegate {
                 TextView outputTextView = FindViewById<TextView>(Resource.Id.textViewSnackbarsOutput);

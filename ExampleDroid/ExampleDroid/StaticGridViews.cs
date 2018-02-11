@@ -13,15 +13,15 @@ using Android.Widget;
 
 namespace ExampleDroid
 {
-    [Activity(Label = "GridViews")]
-    public class GridViews : Activity
+    [Activity(Label = "Static GridViews")]
+    public class StaticGridViews : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             // Set our view from the "GridViews" layout resource
-            SetContentView(Resource.Layout.GridViews);
+            SetContentView(Resource.Layout.StaticGridViews);
 
         }
     }

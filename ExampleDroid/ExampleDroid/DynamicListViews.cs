@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 
@@ -14,9 +15,10 @@ using Android.Widget;
 
 namespace ExampleDroid
 {
-    [Activity(Label = "ListViews")]
-    public class ListViews : Activity
+    [Activity(Label = "Dynamic ListViews")]
+    public class DynamicListViews : Activity
     {
+        //ObservableCollection<String> observableDataSource = new ObservableCollection<String>();
         ListView listView;
         ArrayList dataSource;
         ArrayAdapter listAdapter;
@@ -26,22 +28,22 @@ namespace ExampleDroid
         {
             base.OnCreate(savedInstanceState);
 
-            // Set our view from the "ListViews" layout resource
-            SetContentView(Resource.Layout.ListViews);
+            // Set our view from the "Dynamic ListViews" layout resource
+            SetContentView(Resource.Layout.DynamicListViews);
 
             dataSource = new ArrayList();
-            listView = FindViewById<ListView>(Resource.Id.lvListViewsListView);
+            listView = FindViewById<ListView>(Resource.Id.lvDynamicListViewsListView);
 
             SetupListView();
 
 
-            FindViewById(Resource.Id.buttonListViewsAdd).Click += (object sender, EventArgs e) => {
+            FindViewById(Resource.Id.buttonDynamicListViewsAdd).Click += (object sender, EventArgs e) => {
                 if (dataSource.Count < 21) {
                     dataSource.Add( String.Concat((20 - dataSource.Count)) + " Clicks Remaining");
                     // I am recreating the ListAdapter and assigning it to the listView because
                     // Xamarin evidently doesn't know how to make NotifyDataSetChanged easily 
                     // located and certainly doesn't follow Android Native Development practices.
-                    //SetupListView();
+                    //observableDataSource.Add(String.Concat((20 - dataSource.Count)) + " Clicks Remaining"); // Doesn't actually work
                     listAdapter.NotifyDataSetChanged(); // Doesn't actually work
                     SetupListView(); // Does work
 
@@ -58,9 +60,13 @@ namespace ExampleDroid
 
             };
 
-            FindViewById(Resource.Id.buttonListViewsDelete).Click += (object sender, EventArgs e) => {
+
+
+
+            FindViewById(Resource.Id.buttonDynamicListViewsDelete).Click += (object sender, EventArgs e) => {
                 if (dataSource.Count > 0)
                 {
+                    //observableDataSource.Remove((string)dataSource[dataSource.Count - 1]);
                     dataSource.Remove(dataSource[dataSource.Count - 1]);
                     // I am recreating the ListAdapter and assigning it to the listView because
                     // Xamarin evidently doesn't know how to make NotifyDataSetChanged easily 
@@ -82,9 +88,13 @@ namespace ExampleDroid
 
         }
 
+
+
+
         private void SetupListView()
         {
             listAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, ((String[])dataSource.ToArray(typeof(string))));
+            //listAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, observableDataSource);
             listAdapter.SetNotifyOnChange(true);
             listView.Adapter = listAdapter;
             listView.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => {

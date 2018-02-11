@@ -3,11 +3,11 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ListView
+    <GridView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.8"
-        android:id="@+id/lvCustomListViewsListView"
+        android:id="@+id/gvStaticGridViewsGridView"
         android:background="#ff005656" />
     <LinearLayout
         android:orientation="horizontal"
@@ -23,13 +23,13 @@
             android:backgroundTint="@android:color/holo_green_light"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:id="@+id/buttonCustomListViewsAdd" />
+            android:id="@+id/buttonStaticGridViewsAdd" />
         <Button
             android:text="Delete"
             android:layout_weight="0.5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:id="@+id/buttonCustomListViewsDelete" />
+            android:id="@+id/buttonStaticGridViewsDelete" />
     </LinearLayout>
 </LinearLayout>

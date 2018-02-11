@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 
@@ -14,8 +15,8 @@ using Android.Widget;
 
 namespace ExampleDroid
 {
-    [Activity(Label = "CustomListViews")]
-    public class CustomListViews : Activity
+    [Activity(Label = "Static ListViews")]
+    public class StaticListViews : Activity
     {
         //ObservableCollection<String> observableDataSource = new ObservableCollection<String>();
         ListView listView;
@@ -27,19 +28,18 @@ namespace ExampleDroid
         {
             base.OnCreate(savedInstanceState);
 
-            // Set our view from the "Custom ListViews" layout resource
-            SetContentView(Resource.Layout.DynamicListViews);
+            // Set our view from the "Static ListViews" layout resource
+            SetContentView(Resource.Layout.StaticListViews);
 
             dataSource = new ArrayList();
-            listView = FindViewById<ListView>(Resource.Id.lvCustomListViewsListView);
+            listView = FindViewById<ListView>(Resource.Id.lvStaticListViewsListView);
 
             SetupListView();
 
 
-            FindViewById(Resource.Id.buttonCustomListViewsAdd).Click += (object sender, EventArgs e) => {
-                if (dataSource.Count < 21)
-                {
-                    dataSource.Add(String.Concat((20 - dataSource.Count)) + " Clicks Remaining");
+            FindViewById(Resource.Id.buttonStaticListViewsAdd).Click += (object sender, EventArgs e) => {
+                if (dataSource.Count < 21) {
+                    dataSource.Add( String.Concat((20 - dataSource.Count)) + " Clicks Remaining");
                     // I am recreating the ListAdapter and assigning it to the listView because
                     // Xamarin evidently doesn't know how to make NotifyDataSetChanged easily 
                     // located and certainly doesn't follow Android Native Development practices.
@@ -54,8 +54,7 @@ namespace ExampleDroid
                     toast = Toast.MakeText(this, "Add", ToastLength.Short);
                     toast.Show();
                 }
-                else
-                {
+                else {
                     Toast.MakeText(this, "Warning! Cannot exceed 20 clicks!", ToastLength.Short).Show();
                 }
 
@@ -64,7 +63,7 @@ namespace ExampleDroid
 
 
 
-            FindViewById(Resource.Id.buttonCustomListViewsDelete).Click += (object sender, EventArgs e) => {
+            FindViewById(Resource.Id.buttonStaticListViewsDelete).Click += (object sender, EventArgs e) => {
                 if (dataSource.Count > 0)
                 {
                     //observableDataSource.Remove((string)dataSource[dataSource.Count - 1]);
@@ -82,8 +81,7 @@ namespace ExampleDroid
                     toast = Toast.MakeText(this, "Delete", ToastLength.Short);
                     toast.Show();
                 }
-                else
-                {
+                else {
                     Toast.MakeText(this, "Warning! Zero is the lowest you can go!", ToastLength.Short).Show();
                 }
             };
