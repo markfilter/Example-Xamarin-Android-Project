@@ -2471,11 +2471,14 @@ namespace ExampleDroid
 			// aapt resource value: 0x7f0800c3
 			public const int buttonStop = 2131230915;
 			
-			// aapt resource value: 0x7f0800d1
-			public const int buttonToastsLong = 2131230929;
-			
 			// aapt resource value: 0x7f0800d0
-			public const int buttonToastsShort = 2131230928;
+			public const int buttonTimePickersSetTime = 2131230928;
+			
+			// aapt resource value: 0x7f0800d2
+			public const int buttonToastsLong = 2131230930;
+			
+			// aapt resource value: 0x7f0800d1
+			public const int buttonToastsShort = 2131230929;
 			
 			// aapt resource value: 0x7f0800ac
 			public const int cancel_action = 2131230892;
@@ -2657,14 +2660,14 @@ namespace ExampleDroid
 			// aapt resource value: 0x7f0800cb
 			public const int lvStaticListViewsListView = 2131230923;
 			
-			// aapt resource value: 0x7f0800d4
-			public const int masked = 2131230932;
+			// aapt resource value: 0x7f0800d5
+			public const int masked = 2131230933;
 			
 			// aapt resource value: 0x7f0800ae
 			public const int media_actions = 2131230894;
 			
-			// aapt resource value: 0x7f0800d2
-			public const int message = 2131230930;
+			// aapt resource value: 0x7f0800d3
+			public const int message = 2131230931;
 			
 			// aapt resource value: 0x7f080030
 			public const int middle = 2131230768;
@@ -2942,8 +2945,8 @@ namespace ExampleDroid
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800d3
-			public const int visible = 2131230931;
+			// aapt resource value: 0x7f0800d4
+			public const int visible = 2131230932;
 			
 			// aapt resource value: 0x7f08003b
 			public const int withText = 2131230779;

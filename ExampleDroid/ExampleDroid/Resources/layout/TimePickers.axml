@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="#ff009688"
-        android:layout_weight="0.3">
+        android:layout_weight="0.2">
         <TextView
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="match_parent"
@@ -20,11 +20,12 @@
             android:padding="24dp"
             android:id="@+id/textViewTimePickersOutput" />
     </FrameLayout>
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="#030303"
-        android:layout_weight="0.7"
+        android:orientation="vertical"
+        android:layout_weight="0.8"
         android:padding="24dp">
         <TimePicker
             android:layout_width="match_parent"
@@ -32,5 +33,11 @@
             android:id="@+id/tpTimePickersTimePicker"
             android:minWidth="25px"
             android:minHeight="25px" />
-    </FrameLayout>
+        <Button xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:text="Set Time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonTimePickersSetTime"
+            android:backgroundTint="#ff009688" />
+    </LinearLayout>
 </LinearLayout>
