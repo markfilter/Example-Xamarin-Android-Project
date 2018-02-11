@@ -98,6 +98,7 @@
     <Compile Include="Snackbars.cs" />
     <Compile Include="ListViews.cs" />
     <Compile Include="CustomListViews.cs" />
+    <Compile Include="GridViews.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

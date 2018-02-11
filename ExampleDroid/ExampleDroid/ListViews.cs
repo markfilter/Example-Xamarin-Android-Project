@@ -17,10 +17,10 @@ namespace ExampleDroid
     [Activity(Label = "ListViews")]
     public class ListViews : Activity
     {
-
         ListView listView;
         ArrayList dataSource;
-        IListAdapter listAdapter;
+        ArrayAdapter listAdapter;
+        Toast toast;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -37,12 +37,20 @@ namespace ExampleDroid
 
             FindViewById(Resource.Id.buttonListViewsAdd).Click += (object sender, EventArgs e) => {
                 if (dataSource.Count < 21) {
-                    dataSource.Add( String.Concat((20 - dataSource.Count + 1)) + " Clicks Remaining");
+                    dataSource.Add( String.Concat((20 - dataSource.Count)) + " Clicks Remaining");
                     // I am recreating the ListAdapter and assigning it to the listView because
                     // Xamarin evidently doesn't know how to make NotifyDataSetChanged easily 
                     // located and certainly doesn't follow Android Native Development practices.
-                    SetupListView();
-                    Toast.MakeText(this, "Add", ToastLength.Short).Show();
+                    //SetupListView();
+                    listAdapter.NotifyDataSetChanged(); // Doesn't actually work
+                    SetupListView(); // Does work
+
+                    if (toast != null)
+                    {
+                        toast.Cancel();
+                    }
+                    toast = Toast.MakeText(this, "Add", ToastLength.Short);
+                    toast.Show();
                 }
                 else {
                     Toast.MakeText(this, "Warning! Cannot exceed 20 clicks!", ToastLength.Short).Show();
@@ -57,8 +65,15 @@ namespace ExampleDroid
                     // I am recreating the ListAdapter and assigning it to the listView because
                     // Xamarin evidently doesn't know how to make NotifyDataSetChanged easily 
                     // located and certainly doesn't follow Android Native Development practices.
-                    SetupListView();
-                    Toast.MakeText(this, "Delete", ToastLength.Short).Show();
+                    listAdapter.NotifyDataSetChanged(); // Doesn't actually work
+                    SetupListView(); // Does work
+
+                    if (toast != null)
+                    {
+                        toast.Cancel();
+                    }
+                    toast = Toast.MakeText(this, "Delete", ToastLength.Short);
+                    toast.Show();
                 }
                 else {
                     Toast.MakeText(this, "Warning! Zero is the lowest you can go!", ToastLength.Short).Show();
@@ -70,6 +85,7 @@ namespace ExampleDroid
         private void SetupListView()
         {
             listAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, ((String[])dataSource.ToArray(typeof(string))));
+            listAdapter.SetNotifyOnChange(true);
             listView.Adapter = listAdapter;
             listView.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => {
                 String selectedFromList = (string)listView.GetItemAtPosition(e.Position);

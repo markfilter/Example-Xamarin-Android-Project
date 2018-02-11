@@ -12,7 +12,7 @@ namespace ExampleDroid
     {
         // Properties
         ArrayList menuCollection = new ArrayList();
-        IListAdapter listAdapter;
+        ArrayAdapter<string> listAdapter;
         ListView menuListView;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -56,6 +56,9 @@ namespace ExampleDroid
                     case 4:
                         StartActivity(typeof(CustomListViews));
                         break;
+                    case 5:
+                        StartActivity(typeof(GridViews));
+                        break;
                     default:
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
                         break;
@@ -73,7 +76,9 @@ namespace ExampleDroid
             menuCollection.Add("Toasts");
             menuCollection.Add("Snackbars");
             menuCollection.Add("ListView");
+            menuCollection.Add("CustomListView");
             menuCollection.Add("GridView");
+            menuCollection.Add("CustomGridView");
             menuCollection.Add("CardView");
             menuCollection.Add("Picker");
             menuCollection.Add("DatePicker");
