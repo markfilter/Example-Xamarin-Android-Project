@@ -47,13 +47,13 @@ namespace ExampleDroid
                     case 1:
                         StartActivity(typeof(Toasts));
                         break;
+                    case 2:
+                        StartActivity(typeof(Snackbars));
+                        break;
                     default:
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
                         break;
                 }
-
-
-
 
             };
         }
