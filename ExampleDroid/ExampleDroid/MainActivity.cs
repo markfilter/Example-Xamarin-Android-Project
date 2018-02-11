@@ -60,96 +60,94 @@ namespace ExampleDroid
                         StartActivity(typeof(CustomListViews));
                         break;
                     case 6:
-                        Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
                         StartActivity(typeof(StaticGridViews));
                         break;
                     case 7:
-                        Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
                         StartActivity(typeof(DynamicGridViews));
                         break;
                     case 8:
-                        Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
                         StartActivity(typeof(CustomGridViews));
                         break;
                     case 9:// Picker
-                        Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(GridViews));
+                        StartActivity(typeof(Pickers));
                         break;
                     case 10: // Date Picker
-                        Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(GridViews));
+                        StartActivity(typeof(DatePickers));
                         break;
                     case 11:
-                        Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(GridViews));
+                        StartActivity(typeof(TimePickers));
                         break;
-                    case 12:
+                    case 12: // Switches
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(GridViews));
+                        //StartActivity(typeof(Switches));
                         break;
-                    case 13:
+                    case 13: // Fingerprint Authorization
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(GridViews));
+                        //StartActivity(typeof(FingerprintAuthorization));
                         break;
-                    case 14:
+                    case 14: // ImageViews
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(GridViews));
+                        //StartActivity(typeof(ImageViews));
                         break;
-                    case 15:
+                    case 15: // Cameras
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(GridViews));
+                        //StartActivity(typeof(Cameras));
                         break;
-                    case 16:
+                    case 16: // Camera & ContentProvider
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(GridViews));
+                        //StartActivity(typeof(CameraAndContentProvider));
                         break;
-                    case 17:
+                    case 17: // Passing Data
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(GridViews));
+                        //StartActivity(typeof(PassingData));
                         break;
-                    case 18:
+                    case 18: // Passing Complex Data
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(GridViews));
+                        //StartActivity(typeof(PassingComplexData));
                         break;
-                    case 19:
+                    case 19: // CardViews
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(GridViews));
+                        //StartActivity(typeof(CardViews));
                         break;
-                    case 20:
+                    case 20: // PagerViews
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(GridViews));
+                        //StartActivity(typeof(PagerViews));
                         break;
-                    case 21:
+                    case 21: // WebViews
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(GridViews));
+                        //StartActivity(typeof(WebViews));
                         break;
-                    case 22:
+                    case 22: // Notifications
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(GridViews));
+                        //StartActivity(typeof(Notifications));
                         break;
-                    case 23:
+                    case 23: // Basic Fragment
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(GridViews));
+                        //StartActivity(typeof(BasicFragment));
                         break;
-                    case 24:
+                    case 24: // Fragment with Menu
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(GridViews));
+                        //StartActivity(typeof(FragmentWithMenu));
                         break;
-                    case 25:
+                    case 25: // Fragment with Data
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(GridViews));
+                        //StartActivity(typeof(FragmentWithData));
                         break;
-                    case 26:
+                    case 26: // Login Screen
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(GridViews));
+                        //StartActivity(typeof(LoginScreen));
                         break;
-                    case 27:
+                    case 27: // RESTful Request
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(GridViews));
+                        //StartActivity(typeof(RESTfulRequest));
                         break;
-                    case 28:
+                    case 28: // Remote Image Download
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(GridViews));
+                        //StartActivity(typeof(RemoteImageDownload));
+                        break;
+                    case 29: // SQLite CRUD
+                        Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
+                        //StartActivity(typeof(SQLiteCRUD));
                         break;
                     default:
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();

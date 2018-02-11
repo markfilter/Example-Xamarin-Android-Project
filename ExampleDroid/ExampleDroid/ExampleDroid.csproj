@@ -102,6 +102,9 @@
     <Compile Include="DynamicListViews.cs" />
     <Compile Include="DynamicGridViews.cs" />
     <Compile Include="CustomGridViews.cs" />
+    <Compile Include="Pickers.cs" />
+    <Compile Include="DatePickers.cs" />
+    <Compile Include="TimePickers.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -126,6 +129,9 @@
     <AndroidResource Include="Resources\layout\DynamicListViews.axml" />
     <AndroidResource Include="Resources\layout\DynamicGridViews.axml" />
     <AndroidResource Include="Resources\layout\CustomGridViews.axml" />
+    <AndroidResource Include="Resources\layout\Pickers.axml" />
+    <AndroidResource Include="Resources\layout\DatePickers.axml" />
+    <AndroidResource Include="Resources\layout\TimePickers.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

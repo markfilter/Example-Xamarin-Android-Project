@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#ff009688"
+        android:layout_weight="0.3">
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="How many developers does it take to screw in a lightbulb?"
+            android:gravity="center"
+            android:textColor="#060606"
+            android:padding="24dp"
+            android:id="@+id/textViewPickersOutput" />
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#030303"
+        android:layout_weight="0.7"
+        android:padding="24dp">
+        <NumberPicker
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/npPickersNumberPicker"
+            android:minWidth="25px"
+            android:minHeight="25px" />
+    </FrameLayout>
+</LinearLayout>
