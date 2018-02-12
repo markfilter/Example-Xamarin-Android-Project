@@ -71,7 +71,7 @@ namespace ExampleDroid
                     case 9:
                         StartActivity(typeof(Pickers));
                         break;
-                    case 10: // Date Picker
+                    case 10:
                         StartActivity(typeof(DatePickers));
                         break;
                     case 11:
@@ -89,63 +89,62 @@ namespace ExampleDroid
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
                         //StartActivity(typeof(ImageViews));
                         break;
-                    case 15: // Cameras
+                    case 16: // Cameras
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
                         //StartActivity(typeof(Cameras));
                         break;
-                    case 16: // Camera & ContentProvider
+                    case 17: // Camera & ContentProvider
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
                         //StartActivity(typeof(CameraAndContentProvider));
                         break;
-                    case 17: // Passing Data
-                        Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(PassingData));
+                    case 18: // Passing Data
+                        StartActivity(typeof(PassingData));
                         break;
-                    case 18: // Passing Complex Data
+                    case 19: // Passing Complex Data
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
                         //StartActivity(typeof(PassingComplexData));
                         break;
-                    case 19: // CardViews
+                    case 20: // CardViews
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
                         //StartActivity(typeof(CardViews));
                         break;
-                    case 20: // PagerViews
+                    case 21: // PagerViews
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
                         //StartActivity(typeof(PagerViews));
                         break;
-                    case 21: // WebViews
+                    case 22: // WebViews
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
                         //StartActivity(typeof(WebViews));
                         break;
-                    case 22: // Notifications
+                    case 23: // Notifications
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
                         //StartActivity(typeof(Notifications));
                         break;
-                    case 23: // Basic Fragment
+                    case 24: // Basic Fragment
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
                         //StartActivity(typeof(BasicFragment));
                         break;
-                    case 24: // Fragment with Menu
+                    case 25: // Fragment with Menu
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
                         //StartActivity(typeof(FragmentWithMenu));
                         break;
-                    case 25: // Fragment with Data
+                    case 26: // Fragment with Data
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
                         //StartActivity(typeof(FragmentWithData));
                         break;
-                    case 26: // Login Screen
+                    case 27: // Login Screen
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
                         //StartActivity(typeof(LoginScreen));
                         break;
-                    case 27: // RESTful Request
+                    case 28: // RESTful Request
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
                         //StartActivity(typeof(RESTfulRequest));
                         break;
-                    case 28: // Remote Image Download
+                    case 29: // Remote Image Download
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
                         //StartActivity(typeof(RemoteImageDownload));
                         break;
-                    case 29: // SQLite CRUD
+                    case 30: // SQLite CRUD
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
                         //StartActivity(typeof(SQLiteCRUD));
                         break;
@@ -173,25 +172,26 @@ namespace ExampleDroid
             menuCollection.Add("Custom GridView"); // 8
             menuCollection.Add("Picker"); // 9
             menuCollection.Add("DatePicker"); // 10
-            menuCollection.Add("Spinner"); // 11
-            menuCollection.Add("Switch"); // 12
-            menuCollection.Add("Fingerprint Auth"); // 13
-            menuCollection.Add("ImageView"); // 14
-            menuCollection.Add("Camera"); // 15
-            menuCollection.Add("Camera & ContentProvider"); // 16
-            menuCollection.Add("Passing Data"); // 17
-            menuCollection.Add("Passing Complex Data"); // 18
-            menuCollection.Add("CardView"); // 19
-            menuCollection.Add("PagerView"); // 20
-            menuCollection.Add("WebView"); // 21
-            menuCollection.Add("Notifications"); // 22
-            menuCollection.Add("Basic Fragment"); // 23
-            menuCollection.Add("Fragment with Menu"); // 24
-            menuCollection.Add("Fragment with Data"); // 25
-            menuCollection.Add("Login Screen"); // 26
-            menuCollection.Add("RESTful Request"); // 27
-            menuCollection.Add("Remote Image Download"); // 28
-            menuCollection.Add("SQLite CRUD"); // 29
+            menuCollection.Add("TimePicker"); // 11
+            menuCollection.Add("Spinner"); // 12
+            menuCollection.Add("Switch"); // 13
+            menuCollection.Add("Fingerprint Auth"); // 14
+            menuCollection.Add("ImageView"); // 15
+            menuCollection.Add("Camera"); // 16
+            menuCollection.Add("Camera & ContentProvider"); // 17
+            menuCollection.Add("Passing Data"); // 18
+            menuCollection.Add("Passing Complex Data"); // 19
+            menuCollection.Add("CardView"); // 20
+            menuCollection.Add("PagerView"); // 21
+            menuCollection.Add("WebView"); // 22
+            menuCollection.Add("Notifications"); // 23
+            menuCollection.Add("Basic Fragment"); // 24
+            menuCollection.Add("Fragment with Menu"); // 25
+            menuCollection.Add("Fragment with Data"); // 26
+            menuCollection.Add("Login Screen"); // 27
+            menuCollection.Add("RESTful Request"); // 28
+            menuCollection.Add("Remote Image Download"); // 29
+            menuCollection.Add("SQLite CRUD"); // 30
         }
     }
 }
