@@ -106,6 +106,7 @@
     <Compile Include="PassingData.cs" />
     <Compile Include="PassingData2.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Spinners.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -135,6 +136,9 @@
     <AndroidResource Include="Resources\layout\TimePickers.axml" />
     <AndroidResource Include="Resources\layout\PassingData.axml" />
     <AndroidResource Include="Resources\layout\PassingData2.axml" />
+    <AndroidResource Include="Resources\layout\Spinners.axml" />
+    <AndroidResource Include="Resources\layout\TextViewForSpinner.axml" />
+    <AndroidResource Include="Resources\values\Spinners.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

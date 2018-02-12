@@ -82,15 +82,19 @@ namespace ExampleDroid
                     case 11:
                         StartActivity(typeof(TimePickers));
                         break;
-                    case 12: // Switches
+                    case 12: // Spinner
+                        //Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
+                        StartActivity(typeof(Spinners));
+                        break;
+                    case 13: // Switches
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
                         //StartActivity(typeof(Switches));
                         break;
-                    case 13: // Fingerprint Authorization
+                    case 14: // Fingerprint Authorization
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
                         //StartActivity(typeof(FingerprintAuthorization));
                         break;
-                    case 14: // ImageViews
+                    case 15: // ImageViews
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
                         //StartActivity(typeof(ImageViews));
                         break;
