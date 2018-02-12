@@ -52,8 +52,6 @@ namespace ExampleDroid
 
         public void AfterTextChanged(IEditable s)
         {
-
-
             if (s == null || s.ToString() == "") {
                 saveWordButton.Enabled = false;
                 saveWordButton.Alpha = 0.5f;
