@@ -46,7 +46,8 @@ namespace ExampleDroid
             // You could just store the returned value into another variable, and then update
             // the TextView onResume; however, this is more straight-forward and easier to
             // follow. Refer to:
-            // https://developer.xamarin.com/recipes/android/fundamentals/activity/start_activity_for_result/
+            // https://developer.xamarin.com/recipes/android/fundamentals/activity/start_activity_for_result/ 
+
             outputTextView = FindViewById<TextView>(Resource.Id.textViewPassingDataOutput);
 
 
