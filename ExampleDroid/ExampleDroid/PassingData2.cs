@@ -44,7 +44,6 @@ namespace ExampleDroid
         void SaveWordButton_Click(object sender, EventArgs e)
         {
             Intent myIntent = new Intent(this, typeof(PassingData));
-            //myIntent.Extras.PutString(PassingData.REQUEST_KEY_WORD_OF_THE_DAY, inputEditText.Text);
             myIntent.PutExtra(PassingData.REQUEST_KEY_WORD_OF_THE_DAY, inputEditText.Text);
             SetResult(Result.Ok, myIntent);
             Finish();
@@ -53,24 +52,26 @@ namespace ExampleDroid
 
         public void AfterTextChanged(IEditable s)
         {
-            if (inputEditText.Text != null) {
-                saveWordButton.Enabled = true;
-                saveWordButton.Alpha = 1.0f;
-            }
-            else {
+
+
+            if (s == null || s.ToString() == "") {
                 saveWordButton.Enabled = false;
                 saveWordButton.Alpha = 0.5f;
+            }
+            else {
+                saveWordButton.Enabled = true;
+                saveWordButton.Alpha = 1.0f;
             }
         }
 
         public void BeforeTextChanged(ICharSequence s, int start, int count, int after)
         {
-            // Intentionally Left Blank
+            // Intentionally left blank
         }
 
         public void OnTextChanged(ICharSequence s, int start, int before, int count)
         {
-            // Intentionally Left Blank
+            // Intentionally left blank
         }
     }
 }
