@@ -54,19 +54,24 @@ namespace ExampleDroid
                         StartActivity(typeof(StaticListViews));
                         break;
                     case 4:
-                        StartActivity(typeof(DynamicListViews));
+                        Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
+                        //StartActivity(typeof(DynamicListViews));
                         break;
                     case 5:
-                        StartActivity(typeof(CustomListViews));
+                        Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
+                        //StartActivity(typeof(CustomListViews));
                         break;
                     case 6:
-                        StartActivity(typeof(StaticGridViews));
+                        Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
+                        //StartActivity(typeof(StaticGridViews));
                         break;
                     case 7:
-                        StartActivity(typeof(DynamicGridViews));
+                        Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
+                        //StartActivity(typeof(DynamicGridViews));
                         break;
                     case 8:
-                        StartActivity(typeof(CustomGridViews));
+                        Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
+                        //StartActivity(typeof(CustomGridViews));
                         break;
                     case 9:
                         StartActivity(typeof(Pickers));
