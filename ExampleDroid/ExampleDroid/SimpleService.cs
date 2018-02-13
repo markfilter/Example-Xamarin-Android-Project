@@ -15,6 +15,10 @@ using ExampleDroid.Services;
 using Uri = Android.Net.Uri;
 using Android.Util;
 using ExampleDroid.Data;
+using System.Net.Http;
+using System.Threading.Tasks;
+using Android.Media;
+using Android.Graphics;
 
 namespace ExampleDroid
 {
@@ -24,9 +28,12 @@ namespace ExampleDroid
     public class UpdateTitleEventArgs : EventArgs 
     {
         public string title;
+        public string imageUrl;
+
         public UpdateTitleEventArgs() {}
         public UpdateTitleEventArgs(InnerData redditPost) {
             this.title = redditPost.title;
+            this.imageUrl = redditPost.thumbnail;
         }
     }
 
@@ -69,14 +76,51 @@ namespace ExampleDroid
            
         }
 
+        /// <summary>
+        /// BasicService BroadcastReceiver - updates title and image.
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        /// <param name="e">E.</param>
         void BasicServiceBroadcastReceiver_UpdateTitle(object sender, EventArgs e)
         {
             if (((UpdateTitleEventArgs)e).title != null) {
+                // Update Title
                 titleTextView.Text = ((UpdateTitleEventArgs)e).title;
+
+                // Download Image and Update ImageView
+                var wasSuccessful = DownloadImageFromUrl(((UpdateTitleEventArgs)e).imageUrl);
             }
         }
 
+        /// <summary>
+        /// Downloads the image from URL.
+        /// </summary>
+        /// <returns>The image from URL.</returns>
+        /// <param name="imageUrl">Image URL.</param>
+        private async Task<Boolean> DownloadImageFromUrl(string imageUrl)
+        {
+            Bitmap downloadedImage = null;
 
+            using (HttpClient client = new HttpClient())
+            {
+                var response = await client.GetAsync(imageUrl);
+                var imageData = await response.Content.ReadAsByteArrayAsync();
+                downloadedImage = BitmapFactory.DecodeByteArray(imageData, 0, imageData.Length);
+            }
+
+            if (downloadedImage != null)
+            {
+                imageView.SetImageBitmap(downloadedImage);
+                imageView.SetScaleType(ImageView.ScaleType.CenterCrop);
+                return true;
+            }
+            else
+            {
+                Toast.MakeText(this, "No image could be downloaded", ToastLength.Long).Show();
+            }
+
+            return false;
+        }
 
 
         protected override void OnResume()
@@ -84,6 +128,7 @@ namespace ExampleDroid
             base.OnResume();
             RegisterReceiver(basicServiceBroadcastReceiver, new IntentFilter(BasicService.BROADCAST_RECEIVER_TAG));
         }
+
 
         protected override void OnPause()
         {
@@ -112,7 +157,8 @@ namespace ExampleDroid
                     InnerData redditPost = new InnerData(value);
                     UpdateTitleEventArgs titleArgs = new UpdateTitleEventArgs(redditPost);
                     UpdateTitle?.Invoke(this, titleArgs);
-                    Log.Debug(BasicService.BROADCAST_RECEIVER_TAG, "Nested Received intent!");
+                    Log.Debug(BasicService.BROADCAST_RECEIVER_TAG, "Nested Received intent! RedditPost.title = " + redditPost.title);
+                    Log.Debug(BasicService.BROADCAST_RECEIVER_TAG, "Nested Received intent! RedditPost.thumbnail = " + redditPost.thumbnail);
                 }
 
             }

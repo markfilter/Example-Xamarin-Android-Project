@@ -29,10 +29,6 @@ namespace ExampleDroid.Services
         IBinder binder;
 
 
-
-
-
-
         public override StartCommandResult OnStartCommand(Android.Content.Intent intent, StartCommandFlags flags, int startId)
         {
             // start your service logic here
@@ -67,9 +63,6 @@ namespace ExampleDroid.Services
         }
 
 
-
-
-
         /// <summary>
         /// Displaies the toast to user.
         /// </summary>
@@ -97,6 +90,7 @@ namespace ExampleDroid.Services
             nMgr.Notify(NOTIFICATION_ID, notification);
         }
 
+
         private async Task<InnerData> GetRemoteJSONStringData(Uri requestUri)
         {
             InnerData responsePost = null;
@@ -117,6 +111,7 @@ namespace ExampleDroid.Services
             return responsePost;
         }
 
+
         public override IBinder OnBind(Intent intent)
         {
             Log.Debug(TAG, "OnBind");
@@ -124,12 +119,14 @@ namespace ExampleDroid.Services
             return binder;
         }
 
+
         public override bool OnUnbind(Intent intent)
         {
             // This method is optional to implement
             Log.Debug(TAG, "OnUnbind");
             return base.OnUnbind(intent);
         }
+
 
         public override void OnDestroy()
         {
@@ -141,6 +138,7 @@ namespace ExampleDroid.Services
             base.OnDestroy();
         }
     }
+
 
     public class BasicServiceBinder : Binder
     {
