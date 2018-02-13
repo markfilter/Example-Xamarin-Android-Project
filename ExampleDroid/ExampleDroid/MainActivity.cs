@@ -87,8 +87,7 @@ namespace ExampleDroid
                         StartActivity(typeof(Spinners));
                         break;
                     case 13: // Switches
-                        Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(Switches));
+                        StartActivity(typeof(Switches));
                         break;
                     case 14: // Fingerprint Authorization
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();

@@ -2427,6 +2427,9 @@ namespace ExampleDroid
 			// aapt resource value: 0x7f08002e
 			public const int beginning = 2131230766;
 			
+			// aapt resource value: 0x7f0800d8
+			public const int bgSwitchesBackground = 2131230936;
+			
 			// aapt resource value: 0x7f080056
 			public const int blocking = 2131230806;
 			
@@ -2496,14 +2499,14 @@ namespace ExampleDroid
 			// aapt resource value: 0x7f0800c7
 			public const int buttonStop = 2131230919;
 			
-			// aapt resource value: 0x7f0800db
-			public const int buttonTimePickersSetTime = 2131230939;
+			// aapt resource value: 0x7f0800df
+			public const int buttonTimePickersSetTime = 2131230943;
 			
-			// aapt resource value: 0x7f0800dd
-			public const int buttonToastsLong = 2131230941;
+			// aapt resource value: 0x7f0800e1
+			public const int buttonToastsLong = 2131230945;
 			
-			// aapt resource value: 0x7f0800dc
-			public const int buttonToastsShort = 2131230940;
+			// aapt resource value: 0x7f0800e0
+			public const int buttonToastsShort = 2131230944;
 			
 			// aapt resource value: 0x7f0800ac
 			public const int cancel_action = 2131230892;
@@ -2691,14 +2694,14 @@ namespace ExampleDroid
 			// aapt resource value: 0x7f0800d5
 			public const int lvStaticListViewsListView = 2131230933;
 			
-			// aapt resource value: 0x7f0800e0
-			public const int masked = 2131230944;
+			// aapt resource value: 0x7f0800e4
+			public const int masked = 2131230948;
 			
 			// aapt resource value: 0x7f0800ae
 			public const int media_actions = 2131230894;
 			
-			// aapt resource value: 0x7f0800de
-			public const int message = 2131230942;
+			// aapt resource value: 0x7f0800e2
+			public const int message = 2131230946;
 			
 			// aapt resource value: 0x7f080030
 			public const int middle = 2131230768;
@@ -2895,6 +2898,12 @@ namespace ExampleDroid
 			// aapt resource value: 0x7f080086
 			public const int submit_area = 2131230854;
 			
+			// aapt resource value: 0x7f0800db
+			public const int switchSwitchesNightMode = 2131230939;
+			
+			// aapt resource value: 0x7f0800da
+			public const int switchSwitchesTextSize = 2131230938;
+			
 			// aapt resource value: 0x7f08001e
 			public const int tabMode = 2131230750;
 			
@@ -2904,8 +2913,8 @@ namespace ExampleDroid
 			// aapt resource value: 0x7f08001a
 			public const int text2 = 2131230746;
 			
-			// aapt resource value: 0x7f0800d8
-			public const int textItem = 2131230936;
+			// aapt resource value: 0x7f0800dc
+			public const int textItem = 2131230940;
 			
 			// aapt resource value: 0x7f080069
 			public const int textSpacerNoButtons = 2131230825;
@@ -2928,8 +2937,8 @@ namespace ExampleDroid
 			// aapt resource value: 0x7f0800cd
 			public const int textViewSnackbarsOutput = 2131230925;
 			
-			// aapt resource value: 0x7f0800d9
-			public const int textViewTimePickersOutput = 2131230937;
+			// aapt resource value: 0x7f0800dd
+			public const int textViewTimePickersOutput = 2131230941;
 			
 			// aapt resource value: 0x7f0800a0
 			public const int text_input_password_toggle = 2131230880;
@@ -2961,8 +2970,8 @@ namespace ExampleDroid
 			// aapt resource value: 0x7f080097
 			public const int touch_outside = 2131230871;
 			
-			// aapt resource value: 0x7f0800da
-			public const int tpTimePickersTimePicker = 2131230938;
+			// aapt resource value: 0x7f0800de
+			public const int tpTimePickersTimePicker = 2131230942;
 			
 			// aapt resource value: 0x7f08000f
 			public const int transition_current_scene = 2131230735;
@@ -2982,6 +2991,9 @@ namespace ExampleDroid
 			// aapt resource value: 0x7f0800cf
 			public const int tvSpinnersOutput = 2131230927;
 			
+			// aapt resource value: 0x7f0800d9
+			public const int tvSwitchesTextView = 2131230937;
+			
 			// aapt resource value: 0x7f08002c
 			public const int uniform = 2131230764;
 			
@@ -2994,8 +3006,8 @@ namespace ExampleDroid
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800df
-			public const int visible = 2131230943;
+			// aapt resource value: 0x7f0800e3
+			public const int visible = 2131230947;
 			
 			// aapt resource value: 0x7f08003b
 			public const int withText = 2131230779;
@@ -3285,16 +3297,19 @@ namespace ExampleDroid
 			public const int support_simple_spinner_dropdown_item = 2130968650;
 			
 			// aapt resource value: 0x7f04004b
-			public const int TextViewForSpinner = 2130968651;
+			public const int Switches = 2130968651;
 			
 			// aapt resource value: 0x7f04004c
-			public const int TimePickers = 2130968652;
+			public const int TextViewForSpinner = 2130968652;
 			
 			// aapt resource value: 0x7f04004d
-			public const int Toasts = 2130968653;
+			public const int TimePickers = 2130968653;
 			
 			// aapt resource value: 0x7f04004e
-			public const int tooltip = 2130968654;
+			public const int Toasts = 2130968654;
+			
+			// aapt resource value: 0x7f04004f
+			public const int tooltip = 2130968655;
 			
 			static Layout()
 			{
