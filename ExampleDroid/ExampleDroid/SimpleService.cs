@@ -23,6 +23,10 @@ namespace ExampleDroid
     public class UpdateTitleEventArgs : EventArgs 
     {
         public string title;
+        public UpdateTitleEventArgs() {}
+        public UpdateTitleEventArgs(string title) {
+            this.title = title;
+        }
     }
 
     [Activity(Label = "Simple Service")]
@@ -33,6 +37,7 @@ namespace ExampleDroid
         TextView titleTextView;
         String downloadUrl;
         BasicServiceBroadcastReceiver basicServiceBroadcastReceiver;
+        Intent downloadIntent;
 
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -53,7 +58,7 @@ namespace ExampleDroid
             FindViewById<Button>(Resource.Id.buttonSimpleServiceStartService).Click += (sender, e) =>
             {
                 // Implementation
-                Intent downloadIntent = new Intent(this, typeof(BasicService));
+                downloadIntent = new Intent(this, typeof(BasicService));
                 downloadIntent.SetData(Uri.Parse(downloadUrl)); // using Uri = Android.Net.Uri;
                 StartService(downloadIntent);
                 // can stop service by calling StopService(new Intent(this, typeOf(BasicService)));
@@ -76,12 +81,13 @@ namespace ExampleDroid
         protected override void OnResume()
         {
             base.OnResume();
-            RegisterReceiver(basicServiceBroadcastReceiver, new IntentFilter("com.markzfilter.exampledroid.service.BasicService.BROADCAST_RECEIVER_TAG"));
+            RegisterReceiver(basicServiceBroadcastReceiver, new IntentFilter(BasicService.BROADCAST_RECEIVER_TAG));
         }
 
         protected override void OnPause()
         {
             UnregisterReceiver(basicServiceBroadcastReceiver);
+            StopService(downloadIntent);
             base.OnPause();
         }
 
@@ -98,12 +104,11 @@ namespace ExampleDroid
 
             public override void OnReceive(Context context, Intent intent)
             {
-                if(intent.Action == "com.markzfilter.exampledroid.service.BasicService.BROADCAST_RECEIVER_TAG") 
+                if(intent.Action == BasicService.BROADCAST_RECEIVER_TAG) 
                 {
                     // Do stuff here.
                     String value = intent.GetStringExtra("key");
-                    UpdateTitleEventArgs titleArgs = new UpdateTitleEventArgs();
-                    titleArgs.title = value;
+                    UpdateTitleEventArgs titleArgs = new UpdateTitleEventArgs(value);
                     UpdateTitle?.Invoke(this, titleArgs);
                     Toast.MakeText(context, "Nested Received: " + value, ToastLength.Short).Show();
                     Log.Debug(BasicService.BROADCAST_RECEIVER_TAG, "Nested Received intent!");

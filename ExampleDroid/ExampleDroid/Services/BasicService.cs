@@ -1,12 +1,18 @@
 ﻿
 using System;
+using System.IO;
+using System.Net;
 using System.Threading;
+using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
+using Android.Net;
 using Android.OS;
 using Android.Util;
 using Android.Widget;
+using Org.Json;
 using Uri = Android.Net.Uri;
+using System.Net.Http;
 
 namespace ExampleDroid.Services
 {
@@ -18,6 +24,11 @@ namespace ExampleDroid.Services
         public static readonly string BROADCAST_RECEIVER_TAG = "com.markzfilter.exampledroid.service.BasicService.BROADCAST_RECEIVER_TAG";
         int NOTIFICATION_ID = 0x1001;
         IBinder binder;
+        HttpClient client;
+
+
+
+
 
         public override StartCommandResult OnStartCommand(Android.Content.Intent intent, StartCommandFlags flags, int startId)
         {
@@ -36,41 +47,82 @@ namespace ExampleDroid.Services
                 DisplayNotification();
                 DisplayToastToUser();
 
-                DoLongRunningWork();
+                client = new HttpClient();
+                client.MaxResponseContentBufferSize = 256000;
+
+                DoLongRunningWork(requestUri);
 
             }
-
-
 
             // Return the correct StartCommandResult for the type of service you are building
             return StartCommandResult.NotSticky;
         }
 
 
+
+
+
+
+
+
         /// <summary>
         /// Does the long running work.
         /// </summary>
-        private void DoLongRunningWork()
+        private void DoLongRunningWork(Uri url)
         {
+            String responseData = "no data received";
+
             var heavyWorkThread = new Thread(() => {
 
-                Thread.Sleep(1000);
-                //Sleeps for 1 s
-                Log.Debug(TAG, "Heavy work completed");
+                // <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+                ConnectivityManager connectivityManager = (ConnectivityManager)GetSystemService(ConnectivityService);
+                NetworkInfo networkInfo = connectivityManager.ActiveNetworkInfo;
+                if (networkInfo.IsConnected) {
+                    // The NewtonSoft JSON.NET library is a widely used library for serializing and deserializing JSON messages.
+                    WebRequest webRequest = WebRequest.Create(url.ToString());
+                    WebResponse response = webRequest.GetResponse();
+                    StreamReader streamReader = new StreamReader(response.GetResponseStream());
+                    responseData = streamReader.ReadToEnd();
 
-                Intent broadcastMessage = new Intent();
-                // If desired, pass some values to the broadcast receiver.
-                broadcastMessage.PutExtra("key", "This is the value");
-                broadcastMessage.SetAction("com.markzfilter.exampledroid.service.BasicService.BROADCAST_RECEIVER_TAG");
+                    Intent broadcastMessage = new Intent();
+                    broadcastMessage.PutExtra("key", responseData);
+                    broadcastMessage.SetAction(BROADCAST_RECEIVER_TAG);
+                    SendBroadcast(broadcastMessage);
 
-                //Android.Support.V4.Content.LocalBroadcastManager.GetInstance(this).SendBroadcast(broadcastMessage);
-                SendBroadcast(broadcastMessage);
+                    StopSelf(); //Stop (and destroy) the service
+                }
 
-                StopSelf(); //Stop (and destroy) the service
+
+
+
+                //Thread.Sleep(1000);
+                ////Sleeps for 1 s
+                //Log.Debug(TAG, "Heavy work completed");
+
+                //Intent broadcastMessage = new Intent();
+                //broadcastMessage.PutExtra("key", responseData);
+                //broadcastMessage.SetAction(BROADCAST_RECEIVER_TAG);
+
+                ////Android.Support.V4.Content.LocalBroadcastManager.GetInstance(this).SendBroadcast(broadcastMessage);
+                //SendBroadcast(broadcastMessage);
+
+                //StopSelf(); //Stop (and destroy) the service
             });
 
             heavyWorkThread.Start();//Start the thread
         }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         /// <summary>
