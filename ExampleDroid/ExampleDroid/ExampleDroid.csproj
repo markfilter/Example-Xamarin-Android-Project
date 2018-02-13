@@ -107,6 +107,8 @@
     <Compile Include="PassingData2.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Spinners.cs" />
+    <Compile Include="Services\BasicService.cs" />
+    <Compile Include="SimpleService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -139,9 +141,11 @@
     <AndroidResource Include="Resources\layout\Spinners.axml" />
     <AndroidResource Include="Resources\layout\TextViewForSpinner.axml" />
     <AndroidResource Include="Resources\values\Spinners.xml" />
+    <AndroidResource Include="Resources\layout\SimpleService.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Annotations.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Annotations.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets')" />

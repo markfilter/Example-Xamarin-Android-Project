@@ -12,11 +12,12 @@ using Android.Text;
 using Android.Views;
 using Android.Widget;
 using Java.Lang;
+using Android.Support.V7.App;
 
 namespace ExampleDroid
 {
     [Activity(Label = "Passing Data 2")]
-    public class PassingData2 : Activity, ITextWatcher
+    public class PassingData2 : AppCompatActivity, ITextWatcher
     {
 
         EditText inputEditText;

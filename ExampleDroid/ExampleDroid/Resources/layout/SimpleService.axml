@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:src="@android:drawable/ic_menu_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.4"
+        android:id="@+id/ivSimpleServiceImageView" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6"
+        android:background="#ff263238"
+        android:padding="24dp">
+        <TextView
+            android:text="Medium Text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:layout_marginBottom="24dp"
+            android:id="@+id/textViewSimpleServiceTitleText" />
+        <Button xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:text="Start Download Service"
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonSimpleServiceStartService"
+            app:backgroundTint="#ff00695c"
+            android:backgroundTint="#ff009688" />
+    </LinearLayout>
+</LinearLayout>

@@ -10,11 +10,12 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Support.V7.App;
 
 namespace ExampleDroid
 {
     [Activity(Label = "Custom GridViews")]
-    public class CustomGridViews : Activity
+    public class CustomGridViews : AppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {

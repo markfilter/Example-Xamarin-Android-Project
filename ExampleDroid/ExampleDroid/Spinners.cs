@@ -10,11 +10,12 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Support.V7.App;
 
 namespace ExampleDroid
 {
     [Activity(Label = "Spinners")]
-    public class Spinners : Activity
+    public class Spinners : AppCompatActivity
     {
         TextView outputTextView;
         string cryptoCurrencySelection;
@@ -44,10 +45,6 @@ namespace ExampleDroid
         private void SetupSpinnerFromResourceFile()
         {
             Spinner spinnerHardcodedResource = FindViewById<Spinner>(Resource.Id.spSpinnersHardcodedResource);
-            //var adapter = new ArrayAdapter(this, Resource.Array.spinners_currency);
-            //adapter.SetDropDownViewResource(Resource.Array.spinners_currency); // .SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            //spinnerHardcodedResource.Adapter = adapter;
-
             ArrayAdapter adapter = ArrayAdapter.CreateFromResource(this, Resource.Array.spinners_currency, Android.Resource.Layout.SimpleSpinnerItem);
             adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             spinnerHardcodedResource.Adapter = adapter;
@@ -61,7 +58,7 @@ namespace ExampleDroid
         }
 
         /// <summary>
-        /// Setups the spinner from CSF ile.
+        /// Setups the spinner from CS File.
         /// </summary>
         private void SetupSpinnerFromCSFile()
         {

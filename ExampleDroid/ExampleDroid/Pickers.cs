@@ -10,11 +10,12 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Support.V7.App;
 
 namespace ExampleDroid
 {
     [Activity(Label = "Pickers")]
-    public class Pickers : Activity, NumberPicker.IOnValueChangeListener
+    public class Pickers : AppCompatActivity, NumberPicker.IOnValueChangeListener
     {
 
         NumberPicker numberPicker;
@@ -24,7 +25,7 @@ namespace ExampleDroid
         {
             base.OnCreate(savedInstanceState);
 
-            // Set our view from the "Toasts" layout resource
+            // Set our view from the "Pickers" layout resource
             SetContentView(Resource.Layout.Pickers);
             outputTextView = FindViewById<TextView>(Resource.Id.textViewPickersOutput);
             SetupNumberPicker();

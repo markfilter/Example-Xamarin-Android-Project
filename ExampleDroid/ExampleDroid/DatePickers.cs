@@ -10,11 +10,12 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Support.V7.App;
 
 namespace ExampleDroid
 {
     [Activity(Label = "DatePickers")]
-    public class DatePickers : Activity
+    public class DatePickers : AppCompatActivity
     {
         TextView outputTextView;
         DatePicker datePicker;

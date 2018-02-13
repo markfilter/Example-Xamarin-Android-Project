@@ -10,11 +10,12 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Support.V7.App;
 
 namespace ExampleDroid
 {
     [Activity(Label = "Passing Data")]
-    public class PassingData : Activity
+    public class PassingData : AppCompatActivity
     {
 
         TextView outputTextView;

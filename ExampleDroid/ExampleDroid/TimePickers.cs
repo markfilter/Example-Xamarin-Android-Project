@@ -10,11 +10,12 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Support.V7.App;
 
 namespace ExampleDroid
 {
     [Activity(Label = "Time Pickers")]
-    public class TimePickers : Activity
+    public class TimePickers : AppCompatActivity
     {
 
         TimePicker timePicker;

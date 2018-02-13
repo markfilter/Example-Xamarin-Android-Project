@@ -12,11 +12,12 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Support.V7.App;
 
 namespace ExampleDroid
 {
     [Activity(Label = "Static ListViews")]
-    public class StaticListViews : Activity
+    public class StaticListViews : AppCompatActivity
     {
         //ObservableCollection<String> observableDataSource = new ObservableCollection<String>();
         ListView listView;
