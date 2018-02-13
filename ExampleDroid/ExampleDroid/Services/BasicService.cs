@@ -13,6 +13,9 @@ using Android.Widget;
 using Org.Json;
 using Uri = Android.Net.Uri;
 using System.Net.Http;
+using Newtonsoft.Json;
+using ExampleDroid.Data;
+using System.Collections.Generic;
 
 namespace ExampleDroid.Services
 {
@@ -24,7 +27,7 @@ namespace ExampleDroid.Services
         public static readonly string BROADCAST_RECEIVER_TAG = "com.markzfilter.exampledroid.service.BasicService.BROADCAST_RECEIVER_TAG";
         int NOTIFICATION_ID = 0x1001;
         IBinder binder;
-        HttpClient client;
+
 
 
 
@@ -47,79 +50,21 @@ namespace ExampleDroid.Services
                 DisplayNotification();
                 DisplayToastToUser();
 
-                client = new HttpClient();
-                client.MaxResponseContentBufferSize = 256000;
+                // <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+                ConnectivityManager connectivityManager = (ConnectivityManager)GetSystemService(ConnectivityService);
+                NetworkInfo networkInfo = connectivityManager.ActiveNetworkInfo;
+                if (networkInfo.IsConnected)
+                {
+                    var jsonResponse = GetRemoteJSONStringData(requestUri);
 
-                DoLongRunningWork(requestUri);
+                }
+                    StopSelf(); //Stop (and destroy) the service
 
             }
 
             // Return the correct StartCommandResult for the type of service you are building
             return StartCommandResult.NotSticky;
         }
-
-
-
-
-
-
-
-
-        /// <summary>
-        /// Does the long running work.
-        /// </summary>
-        private void DoLongRunningWork(Uri url)
-        {
-            String responseData = "no data received";
-
-            var heavyWorkThread = new Thread(() => {
-
-                // <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
-                ConnectivityManager connectivityManager = (ConnectivityManager)GetSystemService(ConnectivityService);
-                NetworkInfo networkInfo = connectivityManager.ActiveNetworkInfo;
-                if (networkInfo.IsConnected) {
-                    // The NewtonSoft JSON.NET library is a widely used library for serializing and deserializing JSON messages.
-                    WebRequest webRequest = WebRequest.Create(url.ToString());
-                    WebResponse response = webRequest.GetResponse();
-                    StreamReader streamReader = new StreamReader(response.GetResponseStream());
-                    responseData = streamReader.ReadToEnd();
-
-                    Intent broadcastMessage = new Intent();
-                    broadcastMessage.PutExtra("key", responseData);
-                    broadcastMessage.SetAction(BROADCAST_RECEIVER_TAG);
-                    SendBroadcast(broadcastMessage);
-
-                    StopSelf(); //Stop (and destroy) the service
-                }
-
-
-
-
-                //Thread.Sleep(1000);
-                ////Sleeps for 1 s
-                //Log.Debug(TAG, "Heavy work completed");
-
-                //Intent broadcastMessage = new Intent();
-                //broadcastMessage.PutExtra("key", responseData);
-                //broadcastMessage.SetAction(BROADCAST_RECEIVER_TAG);
-
-                ////Android.Support.V4.Content.LocalBroadcastManager.GetInstance(this).SendBroadcast(broadcastMessage);
-                //SendBroadcast(broadcastMessage);
-
-                //StopSelf(); //Stop (and destroy) the service
-            });
-
-            heavyWorkThread.Start();//Start the thread
-        }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -150,6 +95,26 @@ namespace ExampleDroid.Services
             var pendingIntent = PendingIntent.GetActivity(this, 0, new Intent(this, typeof(SimpleService)),0);
             notification.ContentIntent = pendingIntent;
             nMgr.Notify(NOTIFICATION_ID, notification);
+        }
+
+        private async Task<InnerData> GetRemoteJSONStringData(Uri requestUri)
+        {
+            InnerData responsePost = null;
+
+            using (HttpClient client = new HttpClient())
+            {
+                var response = await client.GetAsync(requestUri.ToString());
+                var json = await response.Content.ReadAsStringAsync();
+                MZFReddit redditDataObjects = JsonConvert.DeserializeObject<MZFReddit>(json);
+                responsePost = redditDataObjects.data.children[0].data;
+            }
+
+            Intent broadcastMessage = new Intent();
+            broadcastMessage.PutExtra("key", responsePost.GetBundle());
+            broadcastMessage.SetAction(BROADCAST_RECEIVER_TAG);
+            SendBroadcast(broadcastMessage);
+
+            return responsePost;
         }
 
         public override IBinder OnBind(Intent intent)

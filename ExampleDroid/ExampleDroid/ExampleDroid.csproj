@@ -115,6 +115,7 @@
     <Compile Include="Spinners.cs" />
     <Compile Include="Services\BasicService.cs" />
     <Compile Include="SimpleService.cs" />
+    <Compile Include="Data\MZFReddit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -152,6 +153,7 @@
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
     <Folder Include="Services\" />
+    <Folder Include="Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Annotations.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Annotations.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets')" />

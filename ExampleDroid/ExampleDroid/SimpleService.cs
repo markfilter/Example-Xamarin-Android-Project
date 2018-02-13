@@ -14,6 +14,7 @@ using Android.Support.V7.App;
 using ExampleDroid.Services;
 using Uri = Android.Net.Uri;
 using Android.Util;
+using ExampleDroid.Data;
 
 namespace ExampleDroid
 {
@@ -24,8 +25,8 @@ namespace ExampleDroid
     {
         public string title;
         public UpdateTitleEventArgs() {}
-        public UpdateTitleEventArgs(string title) {
-            this.title = title;
+        public UpdateTitleEventArgs(InnerData redditPost) {
+            this.title = redditPost.title;
         }
     }
 
@@ -107,10 +108,10 @@ namespace ExampleDroid
                 if(intent.Action == BasicService.BROADCAST_RECEIVER_TAG) 
                 {
                     // Do stuff here.
-                    String value = intent.GetStringExtra("key");
-                    UpdateTitleEventArgs titleArgs = new UpdateTitleEventArgs(value);
+                    Bundle value = intent.GetBundleExtra("key");
+                    InnerData redditPost = new InnerData(value);
+                    UpdateTitleEventArgs titleArgs = new UpdateTitleEventArgs(redditPost);
                     UpdateTitle?.Invoke(this, titleArgs);
-                    Toast.MakeText(context, "Nested Received: " + value, ToastLength.Short).Show();
                     Log.Debug(BasicService.BROADCAST_RECEIVER_TAG, "Nested Received intent!");
                 }
 
