@@ -117,6 +117,8 @@
     <Compile Include="SimpleService.cs" />
     <Compile Include="Data\MZFReddit.cs" />
     <Compile Include="Switches.cs" />
+    <Compile Include="FingerprintAuthorization.cs" />
+    <Compile Include="SuccessfulAuthentication.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -151,6 +153,8 @@
     <AndroidResource Include="Resources\values\Spinners.xml" />
     <AndroidResource Include="Resources\layout\SimpleService.axml" />
     <AndroidResource Include="Resources\layout\Switches.axml" />
+    <AndroidResource Include="Resources\layout\FingerprintAuthorization.axml" />
+    <AndroidResource Include="Resources\layout\SuccessfulAuthentication.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

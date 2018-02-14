@@ -34,18 +34,21 @@ namespace ExampleDroid
             // Set our view from the "Switches" layout resource
             SetContentView(Resource.Layout.Switches);
 
+            // Reference UI elements from Designer file
             backgroundLayout = FindViewById<LinearLayout>(Resource.Id.bgSwitchesBackground);
             switchTextView = FindViewById<TextView>(Resource.Id.tvSwitchesTextView);
-
             toggleSwitch1 = FindViewById<Switch>(Resource.Id.switchSwitchesTextSize);
             toggleSwitch2 = FindViewById<Switch>(Resource.Id.switchSwitchesNightMode);
 
+            // Setup Default Colors and Size
             switchTextView.TextSize = textSize;
             switchTextView.SetTextColor(textColorDark);
             toggleSwitch1.SetTextColor(textColorDark);
             toggleSwitch2.SetTextColor(textColorDark);
             backgroundLayout.SetBackgroundColor(BackgroundColorLight);
 
+
+            // Set Toggle Listeners
             toggleSwitch1.CheckedChange += delegate (object sender, CompoundButton.CheckedChangeEventArgs e)
             {
                 switchTextView.TextSize = e.IsChecked ? textSize = 24.0f : textSize = 14.0f;

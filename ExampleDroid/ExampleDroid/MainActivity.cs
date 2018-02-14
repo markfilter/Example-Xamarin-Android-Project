@@ -86,12 +86,11 @@ namespace ExampleDroid
                     case 12: 
                         StartActivity(typeof(Spinners));
                         break;
-                    case 13: // Switches
+                    case 13:
                         StartActivity(typeof(Switches));
                         break;
-                    case 14: // Fingerprint Authorization
-                        Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(FingerprintAuthorization));
+                    case 14:
+                        StartActivity(typeof(FingerprintAuthorization));
                         break;
                     case 15: // ImageViews
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
