@@ -46,24 +46,30 @@ namespace ExampleDroid
             fingerprintManagerCompat = FingerprintManagerCompat.From(this);
             cancelationSignal = new Android.Support.V4.OS.CancellationSignal();
 
-
+            fingerprintStatusTextView = FindViewById<TextView>(Resource.Id.tvFingerprintStatusTextView);
             buttonAuthenticate = FindViewById<Button>(Resource.Id.buttonFingerPrintAuthenticate);
             buttonReset = FindViewById<Button>(Resource.Id.buttonFingerPrintReset);
+            FindViewById<ProgressBar>(Resource.Id.pbFingerprintAuthenticationProgressBar).Visibility = ViewStates.Invisible;
 
             buttonAuthenticate.Click += (sender, e) => {
                 // Implementation
+                FindViewById<ProgressBar>(Resource.Id.pbFingerprintAuthenticationProgressBar).Visibility = ViewStates.Visible;
+
                 if (CanUseFingerprintBiometric()) {
                     LogUserIn();
                 }
                 else 
                 {
+                    FindViewById<ProgressBar>(Resource.Id.pbFingerprintAuthenticationProgressBar).Visibility = ViewStates.Invisible;
                     Toast.MakeText(this, "This device is not configured for Fingerprint Biometrics", ToastLength.Long).Show();
                 }
+
             };
 
             buttonReset.Click += (sender, e) => {
                 // Implementation
-
+                FindViewById<ProgressBar>(Resource.Id.pbFingerprintAuthenticationProgressBar).Visibility = ViewStates.Invisible;
+                fingerprintStatusTextView.Text = "You Must Authenticate";
             };
 
         }
@@ -77,8 +83,8 @@ namespace ExampleDroid
 
         private bool CanUseFingerprintBiometric()
         {
-            if (!fingerprintManagerCompat.IsHardwareDetected) {
-                if (!fingerprintManagerCompat.HasEnrolledFingerprints) 
+            if (fingerprintManagerCompat.IsHardwareDetected) {
+                if (fingerprintManagerCompat.HasEnrolledFingerprints) 
                 {
                     var permissionResult = ContextCompat.CheckSelfPermission(this, Manifest.Permission.UseFingerprint);
                     if (permissionResult == Android.Content.PM.Permission.Granted) 
@@ -116,6 +122,8 @@ namespace ExampleDroid
         public override void OnAuthenticationSucceeded(FingerprintManagerCompat.AuthenticationResult result)
         {
             base.OnAuthenticationSucceeded(result);
+            this.activity.FindViewById<ProgressBar>(Resource.Id.pbFingerprintAuthenticationProgressBar).Visibility = ViewStates.Invisible;
+            this.activity.FindViewById<TextView>(Resource.Id.tvFingerprintStatusTextView).Text = "You are signed in.";
             Intent intent = new Intent(activity, typeof(SuccessfulAuthentication));
             intent.PutExtra("userId", this.userId);
             this.activity.StartActivity(intent);

@@ -142,19 +142,7 @@ namespace ExampleDroid
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
                         //StartActivity(typeof(FragmentWithData));
                         break;
-                    case 28: // Login Screen
-                        Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(LoginScreen));
-                        break;
-                    case 29: // RESTful Request
-                        Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(RESTfulRequest));
-                        break;
-                    case 30: // Remote Image Download
-                        Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(RemoteImageDownload));
-                        break;
-                    case 31: // SQLite CRUD
+                    case 28: // SQLite CRUD
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
                         //StartActivity(typeof(SQLiteCRUD));
                         break;
@@ -171,9 +159,9 @@ namespace ExampleDroid
         /// </summary>
         private void PopulateMenu()
         {
-            menuCollection.Add("Progress Indicator"); // 0
-            menuCollection.Add("Toasts"); // 1
-            menuCollection.Add("Snackbars"); // 2
+            menuCollection.Add("Progress Indicator"); // 0 : DONE
+            menuCollection.Add("Toasts"); // 1 : DONE
+            menuCollection.Add("Snackbars"); // 2 : DONE
             menuCollection.Add("Static ListView"); // 3
             menuCollection.Add("Dynamic ListView"); // 4
             menuCollection.Add("CustomListView"); // 5
@@ -181,32 +169,34 @@ namespace ExampleDroid
             menuCollection.Add("Dynamic GridView"); // 7
             menuCollection.Add("Custom GridView"); // 8
 
-            menuCollection.Add("Picker"); // 9
-            menuCollection.Add("DatePicker"); // 10
-            menuCollection.Add("TimePicker"); // 11
+            menuCollection.Add("Picker"); // 9 : DONE
+            menuCollection.Add("DatePicker"); // 10 : DONE
+            menuCollection.Add("TimePicker"); // 11 : DONE
 
-            menuCollection.Add("Spinner"); // 12
-            menuCollection.Add("Switch"); // 13
-            menuCollection.Add("Fingerprint Auth"); // 14
+            menuCollection.Add("Spinner"); // 12 : DONE
+            menuCollection.Add("Switch"); // 13 : DONE
+            menuCollection.Add("Login Screen & Fingerprint"); // 14 : WIP
 
-            menuCollection.Add("ImageView"); // 15
-            menuCollection.Add("Simple Service"); // 16
+            menuCollection.Add("File System"); // 15
+            menuCollection.Add("Simple Service"); // 16 Login Screen
 
             menuCollection.Add("Camera"); // 17
             menuCollection.Add("Camera & ContentProvider"); // 18
+
             menuCollection.Add("Passing Data"); // 19
             menuCollection.Add("Passing Complex Data"); // 20
+
             menuCollection.Add("CardView"); // 21
             menuCollection.Add("PagerView"); // 22
+
             menuCollection.Add("WebView"); // 23
             menuCollection.Add("Notifications"); // 24
+
             menuCollection.Add("Basic Fragment"); // 25
             menuCollection.Add("Fragment with Menu"); // 26
             menuCollection.Add("Fragment with Data"); // 27
-            menuCollection.Add("Login Screen"); // 28
-            menuCollection.Add("RESTful Request"); // 29
-            menuCollection.Add("Remote Image Download"); // 30
-            menuCollection.Add("SQLite CRUD"); // 31
+
+            menuCollection.Add("SQLite CRUD"); // 28
         }
     }
 }
