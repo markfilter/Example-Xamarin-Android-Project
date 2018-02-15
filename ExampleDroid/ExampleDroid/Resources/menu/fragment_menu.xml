@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_matches"
+        android:title="Matches" />
+    <item android:id="@+id/action_notifications"
+        android:title="Notifications" />
+    <item android:id="@+id/action_messages"
+        android:title="Messages"/>
+    <item android:id="@+id/action_profile"
+        android:title="Profile" />
+</menu>

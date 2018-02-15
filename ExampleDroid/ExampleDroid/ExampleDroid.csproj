@@ -119,6 +119,12 @@
     <Compile Include="Switches.cs" />
     <Compile Include="FingerprintAuthorization.cs" />
     <Compile Include="SuccessfulAuthentication.cs" />
+    <Compile Include="BasicFragmentActivity.cs" />
+    <Compile Include="BasicFragment.cs" />
+    <Compile Include="FragmentWithMenuActivity.cs" />
+    <Compile Include="FragmentWithDataActivity.cs" />
+    <Compile Include="FragmentWithMenu.cs" />
+    <Compile Include="FragmentWithData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -157,11 +163,19 @@
     <AndroidResource Include="Resources\layout\SuccessfulAuthentication.axml" />
     <AndroidResource Include="Resources\values\Styles.xml" />
     <AndroidResource Include="Resources\values\Colors.xml" />
+    <AndroidResource Include="Resources\layout\BasicFragmentActivity.axml" />
+    <AndroidResource Include="Resources\layout\BasicFragment.axml" />
+    <AndroidResource Include="Resources\layout\FragmentWithMenuActivity.axml" />
+    <AndroidResource Include="Resources\layout\FragmentWithDataActivity.axml" />
+    <AndroidResource Include="Resources\layout\FragmentWithMenu.axml" />
+    <AndroidResource Include="Resources\layout\FragmentWithData.axml" />
+    <AndroidResource Include="Resources\Menu\fragment_menu.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
     <Folder Include="Services\" />
     <Folder Include="Data\" />
+    <Folder Include="Resources\Menu\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Annotations.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Annotations.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets')" />

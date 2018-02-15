@@ -131,16 +131,13 @@ namespace ExampleDroid
                         //StartActivity(typeof(Notifications));
                         break;
                     case 25: // Basic Fragment
-                        Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(BasicFragment));
+                        StartActivity(typeof(BasicFragmentActivity));
                         break;
                     case 26: // Fragment with Menu
-                        Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(FragmentWithMenu));
+                        StartActivity(typeof(FragmentWithMenuActivity));
                         break;
                     case 27: // Fragment with Data
-                        Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
-                        //StartActivity(typeof(FragmentWithData));
+                        StartActivity(typeof(FragmentWithDataActivity));
                         break;
                     case 28: // SQLite CRUD
                         Toast.MakeText(this, "Not Currently Implemented", ToastLength.Short).Show();
@@ -192,9 +189,9 @@ namespace ExampleDroid
             menuCollection.Add("WebView (Not Implemented)"); // 23
             menuCollection.Add("Notifications (Not Implemented)"); // 24
 
-            menuCollection.Add("Basic Fragment (Not Implemented)"); // 25
-            menuCollection.Add("Fragment with Menu (Not Implemented)"); // 26
-            menuCollection.Add("Fragment with Data (Not Implemented)"); // 27
+            menuCollection.Add("Basic Fragment"); // 25
+            menuCollection.Add("Fragment with Menu"); // 26
+            menuCollection.Add("Fragment with Data"); // 27
 
             menuCollection.Add("SQLite CRUD (Not Implemented)"); // 28
         }
