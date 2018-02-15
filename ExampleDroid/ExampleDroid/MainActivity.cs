@@ -163,11 +163,11 @@ namespace ExampleDroid
             menuCollection.Add("Toasts"); // 1 : DONE
             menuCollection.Add("Snackbars"); // 2 : DONE
             menuCollection.Add("Static ListView"); // 3
-            menuCollection.Add("Dynamic ListView"); // 4
-            menuCollection.Add("CustomListView"); // 5
-            menuCollection.Add("Static GridView"); // 6
-            menuCollection.Add("Dynamic GridView"); // 7
-            menuCollection.Add("Custom GridView"); // 8
+            menuCollection.Add("Dynamic ListView (Not Implemented)"); // 4
+            menuCollection.Add("CustomListView (Not Implemented)"); // 5
+            menuCollection.Add("Static GridView (Not Implemented)"); // 6
+            menuCollection.Add("Dynamic GridView (Not Implemented)"); // 7
+            menuCollection.Add("Custom GridView (Not Implemented)"); // 8
 
             menuCollection.Add("Picker"); // 9 : DONE
             menuCollection.Add("DatePicker"); // 10 : DONE
@@ -177,26 +177,26 @@ namespace ExampleDroid
             menuCollection.Add("Switch"); // 13 : DONE
             menuCollection.Add("Login Screen & Fingerprint"); // 14 : WIP
 
-            menuCollection.Add("File System"); // 15
+            menuCollection.Add("File System (Not Implemented)"); // 15
             menuCollection.Add("Simple Service"); // 16 Login Screen
 
-            menuCollection.Add("Camera"); // 17
-            menuCollection.Add("Camera & ContentProvider"); // 18
+            menuCollection.Add("Camera (Not Implemented)"); // 17
+            menuCollection.Add("Camera & ContentProvider (Not Implemented)"); // 18
 
             menuCollection.Add("Passing Data"); // 19
-            menuCollection.Add("Passing Complex Data"); // 20
+            menuCollection.Add("Passing Complex Data (Not Implemented)"); // 20
 
-            menuCollection.Add("CardView"); // 21
-            menuCollection.Add("PagerView"); // 22
+            menuCollection.Add("CardView (Not Implemented)"); // 21
+            menuCollection.Add("PagerView (Not Implemented)"); // 22
 
-            menuCollection.Add("WebView"); // 23
-            menuCollection.Add("Notifications"); // 24
+            menuCollection.Add("WebView (Not Implemented)"); // 23
+            menuCollection.Add("Notifications (Not Implemented)"); // 24
 
-            menuCollection.Add("Basic Fragment"); // 25
-            menuCollection.Add("Fragment with Menu"); // 26
-            menuCollection.Add("Fragment with Data"); // 27
+            menuCollection.Add("Basic Fragment (Not Implemented)"); // 25
+            menuCollection.Add("Fragment with Menu (Not Implemented)"); // 26
+            menuCollection.Add("Fragment with Data (Not Implemented)"); // 27
 
-            menuCollection.Add("SQLite CRUD"); // 28
+            menuCollection.Add("SQLite CRUD (Not Implemented)"); // 28
         }
     }
 }

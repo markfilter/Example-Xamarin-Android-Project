@@ -3,6 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackgroundDark"
     android:minWidth="25px"
     android:minHeight="25px">
     <FrameLayout
@@ -23,13 +24,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#030303"
+        android:background="@color/colorBackgroundDark"
         android:orientation="vertical"
         android:layout_weight="0.8"
         android:padding="24dp">
         <TimePicker
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.Picker"
             android:id="@+id/tpTimePickersTimePicker"
             android:minWidth="25px"
             android:minHeight="25px" />
@@ -37,6 +39,7 @@
             android:text="Set Time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorTextIcons"
             android:id="@+id/buttonTimePickersSetTime"
             android:backgroundTint="#ff009688" />
     </LinearLayout>

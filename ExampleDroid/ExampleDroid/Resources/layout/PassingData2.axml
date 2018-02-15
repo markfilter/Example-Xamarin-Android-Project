@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:background="@color/colorBackgroundDark"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <FrameLayout
@@ -12,6 +13,8 @@
             android:id="@+id/editTextPassingData2Input"
             android:hint="Word of the day"
             android:layout_gravity="center"
+            android:textColor="@color/colorTextIcons"
+            android:textColorHint="@color/colorPrimary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </FrameLayout>
@@ -26,6 +29,7 @@
             android:layout_gravity="center"
             android:id="@+id/buttonPassingData2SendStringData"
             android:text="Save Word Of The Day"
-            android:backgroundTint="#ff009688" />
+            android:textColor="@color/colorPrimaryText"
+            android:backgroundTint="@color/colorAccent" />
     </FrameLayout>
 </LinearLayout>

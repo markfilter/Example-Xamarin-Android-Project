@@ -155,6 +155,8 @@
     <AndroidResource Include="Resources\layout\Switches.axml" />
     <AndroidResource Include="Resources\layout\FingerprintAuthorization.axml" />
     <AndroidResource Include="Resources\layout\SuccessfulAuthentication.axml" />
+    <AndroidResource Include="Resources\values\Styles.xml" />
+    <AndroidResource Include="Resources\values\Colors.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

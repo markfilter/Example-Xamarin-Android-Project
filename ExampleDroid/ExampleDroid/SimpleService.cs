@@ -133,7 +133,10 @@ namespace ExampleDroid
         protected override void OnPause()
         {
             UnregisterReceiver(basicServiceBroadcastReceiver);
-            StopService(downloadIntent);
+            if (downloadIntent != null) 
+            {
+                StopService(downloadIntent);
+            }
             base.OnPause();
         }
 

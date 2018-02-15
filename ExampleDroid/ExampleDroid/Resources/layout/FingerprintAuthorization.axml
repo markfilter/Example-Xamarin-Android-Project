@@ -2,13 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:padding="24dp"
+    android:background="@color/colorBackgroundDark"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
-        android:text="Authentication Status"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView1" />
+        android:textColor="@color/colorTextIcons"
+        android:textColorHint="@color/colorPrimary"
+        android:id="@+id/textView1"
+        android:text="Account Login" />
     <FrameLayout
         android:minWidth="25px"
         android:minHeight="25px"
@@ -21,13 +24,38 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:textColor="@color/colorAccent"
             android:gravity="center"
             android:id="@+id/tvFingerprintStatusTextView" />
         <ProgressBar
             style="?android:attr/progressBarStyleLarge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
             android:id="@+id/pbFingerprintAuthenticationProgressBar" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayout2">
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/username_layout"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:textColorHint="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:hint="Username"
+                    android:textColorHint="@color/colorPrimary"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etFingerprintUsernameEditText" />
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
     </FrameLayout>
     <LinearLayout
         android:orientation="horizontal"

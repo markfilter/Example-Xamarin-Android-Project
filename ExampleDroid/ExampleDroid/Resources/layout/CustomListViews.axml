@@ -8,12 +8,12 @@
         android:layout_height="0dp"
         android:layout_weight="0.8"
         android:id="@+id/lvCustomListViewsListView"
-        android:background="#ff005656" />
+        android:background="@color/colorBackgroundLight" />
     <LinearLayout
         android:orientation="horizontal"
         android:layout_height="0dp"
         android:layout_weight="0.2"
-        android:background="#f6f9f6"
+        android:background="@color/colorBackgroundDark"
         android:padding="24dp"
         android:layout_width="match_parent">
         <Button

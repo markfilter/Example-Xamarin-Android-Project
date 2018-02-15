@@ -3,6 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackgroundDark"
     android:minWidth="25px"
     android:minHeight="25px">
     <FrameLayout
@@ -23,14 +24,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#030303"
         android:layout_weight="0.7"
+        android:background="@color/colorBackgroundDark"
         android:orientation="vertical"
         android:padding="24dp">
         <DatePicker
             android:datePickerMode="spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.Picker"
             android:id="@+id/dpDatePickersDatePicker"
             android:minWidth="25px"
             android:minHeight="25px" />
